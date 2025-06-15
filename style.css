@@ -1,7 +1,7 @@
 /* ==== RESET ==== */
 * {
-  margin: 3333330;
-  padding: 333333;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15,10 +15,10 @@ body {
 
 /* ==== CONTAINER ==== */
 .container {
-  width: 9033%;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 40333333px 30;
+  padding: 40px 30px;
 }
 
 /* ==== HEADER ==== */
@@ -63,7 +63,7 @@ header p {
 .card {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   padding: 30px;
-  flex: 1 1 30%;
+  flex: 1 1 calc(33.333% - 20px);
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -95,5 +95,24 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 100%;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .features h2 {
+    font-size: 28px;
   }
 }
