@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Poetry Books – ReadNext</title>
+  <link rel="stylesheet" href="poetry.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Poetry Books</h1>
+    <h2 class="sky">Immerse yourself in lyrical beauty and emotional expression.</h2>
+  </header>
+
+  <div class="sky-line">
+    Poetry is the rhythm of the soul – choose your favorite poems and cherish the verse.
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const poetryBooks = [
+        { title: "Milk and Honey by Rupi Kaur", rating: "★ 4.6", info: "Raw and honest poetry on love and healing." },
+        { title: "The Sun and Her Flowers by Rupi Kaur", rating: "★ 4.5", info: "A journey of growth and blooming." },
+        { title: "Leaves of Grass by Walt Whitman", rating: "★ 4.7", info: "Celebration of nature, life, and democracy." },
+        { title: "The Essential Rumi by Rumi", rating: "★ 4.8", info: "Mystical and spiritual poetry by the Sufi master." },
+        { title: "Ariel by Sylvia Plath", rating: "★ 4.6", info: "Powerful poems from a legendary voice." },
+        { title: "The Collected Poems by Emily Dickinson", rating: "★ 4.9", info: "Timeless reflections on death, love, and nature." },
+        { title: "Where the Sidewalk Ends by Shel Silverstein", rating: "★ 4.8", info: "Whimsical poetry for all ages." },
+        { title: "Twenty Love Poems and a Song of Despair by Pablo Neruda", rating: "★ 4.7", info: "Romantic and poignant verses." },
+        { title: "Devotions by Mary Oliver", rating: "★ 4.6", info: "Poems about nature and presence." },
+        { title: "The Prophet by Kahlil Gibran", rating: "★ 4.9", info: "Philosophical prose poetry on life’s aspects." },
+        { title: "A Poem for Every Night of the Year by Allie Esiri", rating: "★ 4.5", info: "A daily dose of inspiring poetry." },
+        { title: "Love Her Wild by Atticus", rating: "★ 4.4", info: "Romantic poems with modern touch." },
+        { title: "The Waste Land by T.S. Eliot", rating: "★ 4.6", info: "A complex and influential modernist poem." },
+        { title: "Selected Poems by Robert Frost", rating: "★ 4.8", info: "Explores nature and human emotion." },
+        { title: "The Penguin Anthology of Twentieth-Century American Poetry", rating: "★ 4.7", info: "Great collection of modern American poets." },
+        { title: "No Matter the Wreckage by Sarah Kay", rating: "★ 4.5", info: "Vivid spoken word poetry in written form." },
+        { title: "Night Sky with Exit Wounds by Ocean Vuong", rating: "★ 4.6", info: "A debut collection full of emotion and pain." },
+        { title: "The Carrying by Ada Limón", rating: "★ 4.7", info: "Poems about survival and grace." },
+        { title: "Soft Thorns by Bridgett Devoue", rating: "★ 4.4", info: "Poems about heartbreak, healing, and growth." },
+        { title: "Crush by Richard Siken", rating: "★ 4.6", info: "Bold and intense poetry about obsession and love." }
+      ];
+
+      const container = document.getElementById('book-list');
+      poetryBooks.forEach(({ title, rating, info }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

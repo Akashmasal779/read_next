@@ -1,0 +1,99 @@
+/* ==== RESET ==== */
+* {
+  margin: 3333330;
+  padding: 333333;
+  box-sizing: border-box;
+}
+
+/* ==== BODY STYLING ==== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f3ec78, #af4261);
+  color: #2e2e2e;
+  line-height: 1.6;
+}
+
+/* ==== CONTAINER ==== */
+.container {
+  width: 9033%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40333333px 30;
+}
+
+/* ==== HEADER ==== */
+header {
+  background-color: #2b5876;
+  color: #fceabb;
+  padding: 60px 0;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* ==== FEATURES SECTION ==== */
+.features {
+  padding: 60px 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: #ff6b6b;
+}
+
+/* ==== CARD STYLING ==== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  padding: 30px;
+  flex: 1 1 30%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: #2d3436;
+  color: #f5f6fa;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* ==== ANIMATIONS ==== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

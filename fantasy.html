@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Fantasy Books – ReadNext</title>
+  <link rel="stylesheet" href="fantasy.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Fantasy Books</h1>
+    <h2 class="sky">Enter magical worlds full of dragons, heroes, and epic quests!</h2>
+  </header>
+
+  <div class="sky-line">
+    Discover realms beyond reality through these top fantasy books.
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const fantasyBooks = [
+        { title: "Harry Potter Series by J.K. Rowling", rating: "★ 4.9", info: "The iconic magical journey of the boy who lived." },
+        { title: "The Lord of the Rings by J.R.R. Tolkien", rating: "★ 4.9", info: "A grand quest to destroy the One Ring." },
+        { title: "A Song of Ice and Fire by George R.R. Martin", rating: "★ 4.8", info: "Epic saga of power, politics, and dragons." },
+        { title: "The Hobbit by J.R.R. Tolkien", rating: "★ 4.8", info: "Bilbo Baggins' adventurous journey to the Lonely Mountain." },
+        { title: "Percy Jackson Series by Rick Riordan", rating: "★ 4.7", info: "Modern-day Greek mythology with action and humor." },
+        { title: "Mistborn Trilogy by Brandon Sanderson", rating: "★ 4.8", info: "Revolution in a world ruled by a dark lord." },
+        { title: "The Chronicles of Narnia by C.S. Lewis", rating: "★ 4.7", info: "Classic tales of the magical land of Narnia." },
+        { title: "The Name of the Wind by Patrick Rothfuss", rating: "★ 4.6", info: "The story of Kvothe, the gifted magician and musician." },
+        { title: "The Wheel of Time Series by Robert Jordan", rating: "★ 4.6", info: "A richly detailed world with powerful magic and prophecy." },
+        { title: "Throne of Glass by Sarah J. Maas", rating: "★ 4.5", info: "An assassin becomes a kingdom's greatest hope." },
+        { title: "Eragon by Christopher Paolini", rating: "★ 4.5", info: "A young farm boy finds a dragon egg that changes his life." },
+        { title: "An Ember in the Ashes by Sabaa Tahir", rating: "★ 4.4", info: "A rebellion brews in a brutal empire." },
+        { title: "The Priory of the Orange Tree by Samantha Shannon", rating: "★ 4.5", info: "Epic fantasy with dragons and female heroes." },
+        { title: "Shadow and Bone by Leigh Bardugo", rating: "★ 4.4", info: "A girl discovers her magical power in a divided world." },
+        { title: "The Witcher Series by Andrzej Sapkowski", rating: "★ 4.6", info: "Monster hunting in a morally grey fantasy world." },
+        { title: "Six of Crows by Leigh Bardugo", rating: "★ 4.7", info: "A gang of outcasts attempt an impossible heist." },
+        { title: "His Dark Materials by Philip Pullman", rating: "★ 4.5", info: "Parallel worlds, daemons, and a battle against destiny." },
+        { title: "The Inheritance Trilogy by N.K. Jemisin", rating: "★ 4.5", info: "Gods, mortals, and political conflict in a rich fantasy." },
+        { title: "The Stormlight Archive by Brandon Sanderson", rating: "★ 4.8", info: "An epic saga of war, honor, and ancient powers." },
+        { title: "Caraval by Stephanie Garber", rating: "★ 4.4", info: "A mysterious game turns into a reality-bending adventure." }
+      ];
+
+      const container = document.getElementById('book-list');
+      fantasyBooks.forEach(({ title, rating, info }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

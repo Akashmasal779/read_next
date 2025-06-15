@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Romance Books – ReadNext</title>
+  <link rel="stylesheet" href="romance.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Romance Books</h1>
+    <h2 class="sky">Experience stories of love, passion, heartbreak, and connection.</h2>
+  </header>
+
+  <div class="sky-line">
+    Discover the most beautiful tales of love across time and genres!
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const romanceBooks = [
+        { title: "The Fault in Our Stars by John Green", rating: "★ 4.7", info: "A moving love story between two teens fighting cancer." },
+        { title: "It Ends With Us by Colleen Hoover", rating: "★ 4.6", info: "An emotional romance that explores strength and survival." },
+        { title: "Pride and Prejudice by Jane Austen", rating: "★ 4.9", info: "A classic tale of love, manners, and misunderstandings." },
+        { title: "The Notebook by Nicholas Sparks", rating: "★ 4.8", info: "A heartwarming romance that endures through time." },
+        { title: "Me Before You by Jojo Moyes", rating: "★ 4.7", info: "A woman falls in love while caring for a paralyzed man." },
+        { title: "One Day by David Nicholls", rating: "★ 4.5", info: "A story of friendship and love told across 20 years." },
+        { title: "Call Me by Your Name by André Aciman", rating: "★ 4.6", info: "A tender tale of summer romance and self-discovery." },
+        { title: "Reminders of Him by Colleen Hoover", rating: "★ 4.4", info: "A mother’s redemption story interwoven with love." },
+        { title: "The Rosie Project by Graeme Simsion", rating: "★ 4.3", info: "A quirky love story with an unconventional hero." },
+        { title: "Outlander by Diana Gabaldon", rating: "★ 4.6", info: "Time-travel, adventure, and a deep romantic connection." },
+        { title: "The Kiss Quotient by Helen Hoang", rating: "★ 4.5", info: "A fun and steamy romance with neurodiverse characters." },
+        { title: "Twilight by Stephenie Meyer", rating: "★ 4.2", info: "A love triangle between a girl, a vampire, and a werewolf." },
+        { title: "Beautiful Disaster by Jamie McGuire", rating: "★ 4.3", info: "A bad boy and good girl love story full of chaos." },
+        { title: "Beach Read by Emily Henry", rating: "★ 4.4", info: "Two writers with opposite styles fall in love." },
+        { title: "Red, White & Royal Blue by Casey McQuiston", rating: "★ 4.6", info: "A royal romance between a prince and a first son." },
+        { title: "The Time Traveler’s Wife by Audrey Niffenegger", rating: "★ 4.5", info: "A love story challenged by time itself." },
+        { title: "The Hating Game by Sally Thorne", rating: "★ 4.3", info: "Office rivals turn lovers in this enemies-to-lovers tale." },
+        { title: "To All the Boys I’ve Loved Before by Jenny Han", rating: "★ 4.4", info: "Teen romance sparked by secret love letters." },
+        { title: "November 9 by Colleen Hoover", rating: "★ 4.5", info: "A once-a-year romance with a deep twist." },
+        { title: "The Wedding Date by Jasmine Guillory", rating: "★ 4.3", info: "A fake date turns into real love." }
+      ];
+
+      const container = document.getElementById('book-list');
+      romanceBooks.forEach(({ title, rating, info }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>
