@@ -1,58 +1,57 @@
-/* ==== RESET ==== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ==== BODY STYLING ==== */
+/* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #f3ec78, #af4261);
   color: #2e2e2e;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ==== CONTAINER ==== */
+/* CONTAINER */
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 40px 30px;
+  padding: 40px 20px;
 }
 
-/* ==== HEADER ==== */
+/* HEADER */
 header {
   background-color: #2b5876;
   color: #fceabb;
-  padding: 60px 0;
+  padding: 40px 15px;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
-  font-size: 48px;
+  font-size: 2.2rem;
   margin-bottom: 10px;
 }
 
 header p {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 300;
 }
 
-/* ==== FEATURES SECTION ==== */
+/* FEATURES SECTION */
 .features {
-  padding: 60px 0;
+  padding: 40px 15px;
 }
 
 .features h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 36px;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
   color: #ff6b6b;
 }
 
-/* ==== CARD STYLING ==== */
+/* CARD GRID */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -60,10 +59,11 @@ header p {
   gap: 20px;
 }
 
+/* CARD */
 .card {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  padding: 30px;
-  flex: 1 1 calc(33.333% - 20px);
+  padding: 20px;
+  flex: 1 1 300px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -78,15 +78,16 @@ header p {
   margin-bottom: 10px;
 }
 
-/* ==== FOOTER ==== */
+/* FOOTER */
 footer {
   background: #2d3436;
   color: #f5f6fa;
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 10px;
+  font-size: 0.9rem;
 }
 
-/* ==== ANIMATIONS ==== */
+/* ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -98,21 +99,27 @@ footer {
   }
 }
 
-/* ==== RESPONSIVE DESIGN ==== */
+/* MEDIA QUERY FOR MOBILE */
 @media (max-width: 768px) {
-  .card {
-    flex: 1 1 100%;
-  }
-
   header h1 {
-    font-size: 32px;
-  }
-
-  header p {
-    font-size: 16px;
+    font-size: 1.8rem;
   }
 
   .features h2 {
-    font-size: 28px;
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    flex: none;
+  }
+
+  .container {
+    padding: 20px 10px;
   }
 }
