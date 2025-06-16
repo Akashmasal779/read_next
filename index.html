@@ -164,6 +164,87 @@
       font-size: 0.9rem;
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #10a8d2;
+      position: absolute;
+      top: 60px;
+      right: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      z-index: 1000;
+      animation: slideIn 0.4s ease forwards;
+    }
+
+    .mobile-nav a {
+      color: white;
+      background: #ff9800;
+      margin: 6px 0;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 500;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .logo h1 {
+        font-size: 1.8rem;
+      }
+
+      .slogan {
+        font-size: 1rem;
+      }
+
+      .question-box {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+        text-align: center;
+      }
+    }
+
     @keyframes pulse {
       0%, 100% {
         transform: scale(1);
@@ -206,6 +287,17 @@
       0% { transform: translateY(0); }
       100% { transform: translateY(-10px); }
     }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -225,6 +317,21 @@
       <a href="contact.html">Contact</a>
       <a href="help.html">Help</a>
     </div>
+
+    <!-- Hamburger & Mobile Nav -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+
     <div class="question-box"><strong>What type of book do you want to read?</strong></div>
   </header>
 
@@ -239,6 +346,11 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+
     const genreData = [
       {
         name: "mythology",
@@ -349,13 +461,12 @@
     });
 
     function goToBooks(type) {
-  if (type === "my" || type === "indory") {
-    window.location.href = `${type}/${type}.html`;
-  } else {
-    window.location.href = `${type}.html`;
-  }
-}
-    
+      if (type === "my" || type === "indory") {
+        window.location.href = `${type}/${type}.html`;
+      } else {
+        window.location.href = `${type}.html`;
+      }
+    }
   </script>
 
 </body>
