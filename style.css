@@ -8,6 +8,26 @@
   right: 20px;
   z-index: 1001;
 }
+.genres {
+  gap: 12px;
+  padding: 1rem;
+}
+
+.genre {
+  width: 120px;
+}
+
+.genre img {
+  height: 80px;
+}
+
+.genre span {
+  font-size: 0.85rem;
+}
+
+.genre p {
+  font-size: 0.7rem !important;
+}
 
 .hamburger span {
   height: 3px;
@@ -64,6 +84,48 @@
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+/* Existing styles ... keep your original code above unchanged */
+
+/* Responsive: Show only on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav,
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  /* Modify genre layout for mobile view */
+  .genres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 genres per row */
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .genre {
+    width: 100%;
+    text-align: center;
+  }
+
+  .genre img {
+    height: 60px;
+  }
+
+  .genre span {
+    font-size: 0.75rem;
+  }
+
+  .genre p {
+    font-size: 0.6rem !important;
   }
 }
 
