@@ -1,42 +1,58 @@
-/* Existing styles ... keep your original code above unchanged */
-
-/* Responsive: Show only on mobile */
 @media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }
 
-  .nav,
-  .nav-links {
-    display: none;
+  .logo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
   }
 
-  .mobile-nav {
-    display: flex;
+  .logo img {
+    height: 50px;
   }
 
-  /* Modify genre layout for mobile view */
-  .genres {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 genres per row */
-    gap: 10px;
-    padding: 1rem;
+  .logo h1 {
+    font-size: 1.8rem;
   }
 
-  .genre {
-    width: 100%;
+  .slogan {
+    font-size: 1rem;
+  }
+
+  .question-box {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
     text-align: center;
   }
 
+  /* Genres adjustment for mobile */
+  .genres {
+    padding: 1rem;
+    gap: 10px;
+  }
+
+  .genre {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+
   .genre img {
-    height: 60px;
+    height: 80px;
   }
 
   .genre span {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 
   .genre p {
-    font-size: 0.6rem !important;
+    font-size: 0.7rem;
+    padding: 0 0.3rem 0.7rem;
   }
 }
