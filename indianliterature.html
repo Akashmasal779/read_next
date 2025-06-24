@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Indian Literature Books – ReadNext</title>
+  <link rel="stylesheet" href="indianliterature.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Indian Literature Books</h1>
+    <h2 class="sky">Explore the finest works of Indian authors through time</h2>
+  </header>
+
+  <div class="sky-line">
+    Choose from the most influential and beautifully written Indian literary works!
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const topIndianLiterature = [
+        { title: "Godaan by Munshi Premchand", rating: "★ 4.8", info: "A powerful Hindi novel about rural India.", link: "https://www.amazon.in/Godan-Munshi-Premchand/dp/8170289401" },
+        { title: "Train to Pakistan by Khushwant Singh", rating: "★ 4.7", info: "Heart-wrenching story set during Partition.", link: "https://www.amazon.in/Train-Pakistan-Khushwant-Singh/dp/0143065883" },
+        { title: "The Guide by R.K. Narayan", rating: "★ 4.6", info: "A tour guide's journey of self-discovery.", link: "https://www.amazon.in/Guide-R-K-Narayan/dp/8185986178" },
+        { title: "Midnight’s Children by Salman Rushdie", rating: "★ 4.5", info: "Booker Prize-winning post-colonial saga.", link: "https://www.amazon.in/Midnights-Children-Salman-Rushdie/dp/0099578514" },
+        { title: "Interpreter of Maladies by Jhumpa Lahiri", rating: "★ 4.7", info: "Pulitzer-winning short stories about Indian immigrants.", link: "https://www.amazon.in/Interpreter-Maladies-Jhumpa-Lahiri/dp/8172235025" },
+        { title: "Palace of Illusions by Chitra Banerjee", rating: "★ 4.8", info: "Draupadi’s Mahabharata from her own voice.", link: "https://www.amazon.in/Palace-Illusions-Chitra-Banerjee-Divakaruni/dp/9387572581" },
+        { title: "The White Tiger by Aravind Adiga", rating: "★ 4.6", info: "Darkly comic story of ambition in India.", link: "https://www.amazon.in/White-Tiger-Aravind-Adiga/dp/8172238474" },
+        { title: "Gitanjali by Rabindranath Tagore", rating: "★ 4.9", info: "Spiritual poetry collection, Nobel-winning.", link: "https://www.amazon.in/Gitanjali-Rabindranath-Tagore/dp/8171676763" },
+        { title: "A Fine Balance by Rohinton Mistry", rating: "★ 4.5", info: "Story of four people during the Emergency.", link: "https://www.amazon.in/Fine-Balance-Rohinton-Mistry/dp/057123058X" },
+        { title: "The Namesake by Jhumpa Lahiri", rating: "★ 4.6", info: "Story of identity and family across continents.", link: "https://www.amazon.in/Namesake-Jhumpa-Lahiri/dp/0006551807" },
+        { title: "The God of Small Things by Arundhati Roy", rating: "★ 4.4", info: "Award-winning debut novel of forbidden love.", link: "https://www.amazon.in/God-Small-Things-Arundhati-Roy/dp/8184001029" },
+        { title: "Swami and Friends by R.K. Narayan", rating: "★ 4.5", info: "Classic novel about a boy’s life in South India.", link: "https://www.amazon.in/Swami-Friends-R-K-Narayan/dp/8185986003" },
+        { title: "Yayati by V.S. Khandekar", rating: "★ 4.6", info: "Mythological novel about desire and sacrifice.", link: "https://www.amazon.in/Yayati-V-S-Khandekar/dp/817185059X" },
+        { title: "Sea of Poppies by Amitav Ghosh", rating: "★ 4.3", info: "Historical fiction set in colonial India.", link: "https://www.amazon.in/Sea-Poppies-Amitav-Ghosh/dp/0143066154" },
+        { title: "In Custody by Anita Desai", rating: "★ 4.4", info: "Story of a Hindi professor and Urdu poet.", link: "https://www.amazon.in/Custody-Anita-Desai/dp/0140122581" },
+        { title: "Tamas by Bhisham Sahni", rating: "★ 4.5", info: "Partition violence through a gripping narrative.", link: "https://www.amazon.in/Tamas-Hindi-Bhisham-Sahni/dp/8126713037" },
+        { title: "Serious Men by Manu Joseph", rating: "★ 4.2", info: "A witty satire on caste and ambition.", link: "https://www.amazon.in/Serious-Men-Manu-Joseph/dp/8172239551" },
+        { title: "The Inheritance of Loss by Kiran Desai", rating: "★ 4.4", info: "Man Booker-winning novel on globalization.", link: "https://www.amazon.in/Inheritance-Loss-Kiran-Desai/dp/0141027281" },
+        { title: "Coolie by Mulk Raj Anand", rating: "★ 4.5", info: "A powerful novel about oppression and injustice.", link: "https://www.amazon.in/Coolie-Mulk-Raj-Anand/dp/0143029266" },
+        { title: "Raag Darbari by Shrilal Shukla", rating: "★ 4.6", info: "Satirical Hindi novel on rural politics.", link: "https://www.amazon.in/Raag-Darbari-Shrilal-Shukla/dp/8125019880" }
+      ];
+
+      const container = document.getElementById('book-list');
+      topIndianLiterature.forEach(({ title, rating, info, link }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+            <a href="${link}" target="_blank" style="color: orange; font-weight: bold; text-decoration: underline;">Buy Now</a>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

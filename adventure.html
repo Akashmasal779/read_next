@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Adventure Books – ReadNext</title>
+  <link rel="stylesheet" href="adventure.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Adventure Books</h1>
+    <h2 class="sky">Experience thrilling journeys and heroic quests!</h2>
+  </header>
+
+  <div class="sky-line">
+    Select your favorite adventure books and explore daring tales!
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const adventureBooks = [
+        { title: "Into the Wild by Jon Krakauer", rating: "★ 4.7", info: "True story of a man’s journey into the Alaskan wilderness.", link: "https://www.amazon.in/Into-Wild-Jon-Krakauer/dp/0385486804" },
+        { title: "Life of Pi by Yann Martel", rating: "★ 4.6", info: "Survival story of a boy stranded with a tiger.", link: "https://www.amazon.in/Life-Pi-Yann-Martel/dp/0156027321" },
+        { title: "The Hobbit by J.R.R. Tolkien", rating: "★ 4.8", info: "A hobbit’s journey through Middle-earth to fight a dragon.", link: "https://www.amazon.in/Hobbit-J-R-R-Tolkien/dp/0261103342" },
+        { title: "Treasure Island by Robert Louis Stevenson", rating: "★ 4.5", info: "Classic pirate adventure full of treasure maps and mutiny.", link: "https://www.amazon.in/Treasure-Island-Robert-Louis-Stevenson/dp/0486275590" },
+        { title: "The Call of the Wild by Jack London", rating: "★ 4.6", info: "A dog’s survival tale in the harsh Yukon.", link: "https://www.amazon.in/Call-Wild-Jack-London/dp/1503332543" },
+        { title: "The Alchemist by Paulo Coelho", rating: "★ 4.7", info: "Spiritual and adventurous journey of a shepherd.", link: "https://www.amazon.in/Alchemist-Paulo-Coelho/dp/8172234983" },
+        { title: "Journey to the Center of the Earth by Jules Verne", rating: "★ 4.4", info: "Science fiction adventure into the earth’s core.", link: "https://www.amazon.in/Journey-Center-Earth-Jules-Verne/dp/1503214137" },
+        { title: "The Martian by Andy Weir", rating: "★ 4.8", info: "Survival of an astronaut stranded on Mars.", link: "https://www.amazon.in/Martian-Andy-Weir/dp/0553418025" },
+        { title: "Around the World in Eighty Days by Jules Verne", rating: "★ 4.6", info: "A wager leads to a race around the world.", link: "https://www.amazon.in/Around-World-Eighty-Days-Verne/dp/150321515X" },
+        { title: "The Lost World by Arthur Conan Doyle", rating: "★ 4.5", info: "Exploration of a hidden land of dinosaurs.", link: "https://www.amazon.in/Lost-World-Arthur-Conan-Doyle/dp/0486282147" },
+        { title: "The Sea-Wolf by Jack London", rating: "★ 4.4", info: "Brutal sea adventure with philosophical depth.", link: "https://www.amazon.in/Sea-Wolf-Jack-London/dp/1503332551" },
+        { title: "Hatchet by Gary Paulsen", rating: "★ 4.6", info: "A boy’s survival in the Canadian wilderness.", link: "https://www.amazon.in/Hatchet-Gary-Paulsen/dp/1416936475" },
+        { title: "White Fang by Jack London", rating: "★ 4.5", info: "Wolf-dog’s journey from wild to civilization.", link: "https://www.amazon.in/White-Fang-Jack-London/dp/1503332608" },
+        { title: "The River of Doubt by Candice Millard", rating: "★ 4.7", info: "Teddy Roosevelt’s dangerous expedition in the Amazon.", link: "https://www.amazon.in/River-Doubt-Theodore-Roosevelts-Darkest/dp/0767913736" },
+        { title: "King Solomon’s Mines by H. Rider Haggard", rating: "★ 4.4", info: "Search for treasure in Africa.", link: "https://www.amazon.in/King-Solomons-Mines-Rider-Haggard/dp/1512094012" },
+        { title: "Wild by Cheryl Strayed", rating: "★ 4.5", info: "A woman’s hike on the Pacific Crest Trail.", link: "https://www.amazon.in/Wild-Found-Pacific-Crest-Oprahs/dp/0307476073" },
+        { title: "The Adventures of Huckleberry Finn by Mark Twain", rating: "★ 4.6", info: "Boy’s river journey full of danger and discovery.", link: "https://www.amazon.in/Adventures-Huckleberry-Finn-Mark-Twain/dp/1503214951" },
+        { title: "Moby Dick by Herman Melville", rating: "★ 4.3", info: "A whaling ship’s pursuit of a giant white whale.", link: "https://www.amazon.in/Moby-Dick-Herman-Melville/dp/1503280780" },
+        { title: "The Swiss Family Robinson by Johann David Wyss", rating: "★ 4.4", info: "A shipwrecked family’s survival on an island.", link: "https://www.amazon.in/Swiss-Family-Robinson-Johann-David/dp/0486408937" },
+        { title: "Shantaram by Gregory David Roberts", rating: "★ 4.6", info: "Epic adventures of a fugitive in Bombay.", link: "https://www.amazon.in/Shantaram-Gregory-David-Roberts/dp/0312330537" }
+      ];
+
+      const container = document.getElementById('book-list');
+      adventureBooks.forEach(({ title, rating, info, link }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+            <a href="${link}" target="_blank" style="color: orange; font-weight: bold; text-decoration: underline;">Buy Now</a>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

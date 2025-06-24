@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReadNext</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Avenir&family=Merriweather:wght@700&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Avenir', 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff3e0, #ffe0b2);
+      color: #333;
+    }
+
+    header {
+      background: #10a8d2;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .logo img {
+      height: 60px;
+      border-radius: 50%;
+      animation: floatLogo 3s ease-in-out infinite alternate;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      font-family: 'Merriweather', serif;
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #4e342e;
+      animation: fadeIn 2s ease-in-out;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    .nav {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+    }
+
+    .nav a {
+      display: inline-block;
+      color: white;
+      margin-left: 10px;
+      padding: 10px 16px;
+      background: #ff9800;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .nav a:hover {
+      background: #ef6c00;
+      transform: scale(1.05);
+    }
+
+    .question-box {
+      background: #fb8c00;
+      color: white;
+      padding: 1rem 0;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Merriweather', serif;
+      font-variant: small-caps;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 20px;
+    }
+
+    .genre {
+      width: 160px;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: zoomIn 0.5s ease forwards;
+    }
+
+    .genre:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .genre img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .genre span {
+      display: block;
+      padding: 0.7rem;
+      font-weight: 500;
+      color: #ff6f00;
+      font-family: 'Avenir', sans-serif;
+    }
+
+    .gallery-link {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .gallery-link .btn {
+      padding: 12px 24px;
+      background: #ff9800;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      animation: pulse 2s infinite;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .gallery-link .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background: #0a8ff5;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-family: 'Avenir', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #10a8d2;
+      position: absolute;
+      top: 60px;
+      right: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      z-index: 1000;
+      animation: slideIn 0.4s ease forwards;
+    }
+
+    .mobile-nav a {
+      color: white;
+      background: #ff9800;
+      margin: 6px 0;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      text-align: center;
+      font-weight: 500;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .logo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .logo h1 {
+        font-size: 1.8rem;
+      }
+
+      .slogan {
+        font-size: 1rem;
+      }
+
+      .question-box {
+        font-size: 1.1rem;
+        padding: 0.8rem 1rem;
+        text-align: center;
+      }
+
+      .genres {
+        padding: 1rem;
+        gap: 10px;
+      }
+
+      .genre {
+        width: 45%;
+        margin-bottom: 10px;
+      }
+
+      .genre img {
+        height: 80px;
+      }
+
+      .genre span {
+        font-size: 0.9rem;
+      }
+
+      .genre p {
+        font-size: 0.7rem;
+        padding: 0 0.3rem 0.7rem;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0px rgba(255, 152, 0, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px rgba(255, 152, 0, 0.9);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes floatLogo {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://i.pinimg.com/1200x/59/e4/fe/59e4fe803b9a08d07627a00344976d5b.jpg" alt="ReadNext Logo">
+      <div>
+        <h1>ReadNext</h1>
+        <div class="slogan">Chapters of Changes</div>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help</a>
+    </div>
+    <div class="question-box"><strong>What type of book do you want to read?</strong></div>
+  </header>
+
+  <section class="genres"></section>
+
+  <div class="gallery-link">
+    <a href="gallery.html" class="btn">View Your Book Gallery</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ReadNext. Chapters of Changes</p>
+    <p>Founder Akash Masal | <strong>Edimax Studio</strong></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    }
+
+    const genreData = [
+      { name: "mythology", img: "https://cdn.pixabay.com/photo/2024/07/04/14/58/pagan-gods-8872810_1280.png", desc: "Indian epics and legends." },
+      { name: "indianhistory", img: "https://cdn.pixabay.com/photo/2020/08/26/16/15/taj-mahal-5519945_1280.jpg", desc: "Rich Indian past and freedom struggle." },
+      { name: "indianliterature", img: "https://cdn.pixabay.com/photo/2016/11/14/03/16/book-1822474_1280.jpg", desc: "Classic and modern Indian authors." },
+      { name: "spirituality", img: "https://cdn.pixabay.com/photo/2020/02/15/00/33/yoga-4849681_1280.jpg", desc: "Meditation, Gita, and peace." },
+      { name: "regionalstories", img: "https://cdn.pixabay.com/photo/2022/08/30/13/17/god-7421086_1280.jpg", desc: "Tales from every Indian corner." },
+      { name: "fiction", img: "https://cdn.pixabay.com/photo/2019/03/18/17/29/fantasy-4063619_1280.jpg", desc: "Imaginative storytelling." },
+      { name: "romance", img: "https://cdn.pixabay.com/photo/2017/11/09/07/02/indian-2932548_1280.jpg", desc: "Love stories and emotions." },
+      { name: "mystery", img: "https://cdn.pixabay.com/photo/2013/10/13/17/50/aztec-195134_1280.jpg", desc: "Whodunits and thrilling puzzles." },
+      { name: "fantasy", img: "https://cdn.pixabay.com/photo/2023/05/19/11/10/ai-generated-8004284_1280.jpg", desc: "Magical worlds and adventures." },
+      { name: "thriller", img: "https://cdn.pixabay.com/photo/2022/09/07/17/20/rogue-wave-7439216_1280.jpg", desc: "Fast-paced suspense." },
+      { name: "selfhelp", img: "https://images.unsplash.com/photo-1519682337058-a94d519337bc", desc: "Improve your life." },
+      { name: "biography", img: "https://cdn.pixabay.com/photo/2012/12/20/13/23/pacifist-71445_1280.jpg", desc: "Stories of real lives." },
+      { name: "science", img: "https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg", desc: "Explore the universe." },
+      { name: "poetry", img: "https://cdn.pixabay.com/photo/2020/03/28/17/09/sutterlin-4977852_1280.jpg", desc: "Verses of emotion." },
+      { name: "technology", img: "https://cdn.pixabay.com/photo/2018/01/20/05/26/plane-3093859_1280.jpg", desc: "Latest tech trends." },
+      { name: "adventure", img: "https://cdn.pixabay.com/photo/2016/11/08/05/20/sunset-1807524_1280.jpg", desc: "Exciting journeys." }
+    ];
+
+    const container = document.querySelector('.genres');
+    genreData.forEach(({ name, img, desc }) => {
+      const div = document.createElement('div');
+      div.className = 'genre';
+      div.onclick = () => goToBooks(name);
+
+      const image = document.createElement('img');
+      image.src = img + "?w=400&auto=format&fit=crop";
+      image.alt = name;
+
+      const title = document.createElement('span');
+      title.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+
+      const paragraph = document.createElement('p');
+      paragraph.style.fontSize = '0.8rem';
+      paragraph.style.padding = '0 0.5rem 1rem';
+      paragraph.style.color = '#555';
+      paragraph.textContent = desc;
+
+      div.appendChild(image);
+      div.appendChild(title);
+      div.appendChild(paragraph);
+      container.appendChild(div);
+    });
+
+    function goToBooks(type) {
+      window.location.href = `${type}.html`;
+    }
+  </script>
+
+</body>
+</html>

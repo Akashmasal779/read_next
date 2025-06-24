@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Self-Help Books – ReadNext</title>
+  <link rel="stylesheet" href="selfhelp.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Self-Help Books</h1>
+    <h2 class="sky">Unlock your potential and transform your mindset!</h2>
+  </header>
+
+  <div class="sky-line">
+    Discover practical wisdom to improve your life through these handpicked self-help classics.
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const selfHelpBooks = [
+        { title: "Atomic Habits by James Clear", rating: "★ 4.9", info: "Tiny changes, remarkable results. A habit-building guide.", link: "https://www.amazon.in/s?k=Atomic+Habits+James+Clear" },
+        { title: "The 7 Habits of Highly Effective People by Stephen R. Covey", rating: "★ 4.8", info: "A holistic approach to personal and professional success.", link: "https://www.amazon.in/s?k=The+7+Habits+of+Highly+Effective+People+Stephen+R+Covey" },
+        { title: "Think and Grow Rich by Napoleon Hill", rating: "★ 4.7", info: "Mental strategies for financial and life success.", link: "https://www.amazon.in/s?k=Think+and+Grow+Rich+Napoleon+Hill" },
+        { title: "The Power of Now by Eckhart Tolle", rating: "★ 4.6", info: "Guide to spiritual enlightenment and mindfulness.", link: "https://www.amazon.in/s?k=The+Power+of+Now+Eckhart+Tolle" },
+        { title: "How to Win Friends and Influence People by Dale Carnegie", rating: "★ 4.8", info: "Timeless principles of communication and influence.", link: "https://www.amazon.in/s?k=How+to+Win+Friends+and+Influence+People+Dale+Carnegie" },
+        { title: "You Can Heal Your Life by Louise Hay", rating: "★ 4.5", info: "Healing the body and mind through affirmations.", link: "https://www.amazon.in/s?k=You+Can+Heal+Your+Life+Louise+Hay" },
+        { title: "Awaken the Giant Within by Tony Robbins", rating: "★ 4.6", info: "Strategies for mastering emotions and life.", link: "https://www.amazon.in/s?k=Awaken+the+Giant+Within+Tony+Robbins" },
+        { title: "Can’t Hurt Me by David Goggins", rating: "★ 4.7", info: "The story of mental toughness and personal discipline.", link: "https://www.amazon.in/s?k=Can't+Hurt+Me+David+Goggins" },
+        { title: "The Subtle Art of Not Giving a F*ck by Mark Manson", rating: "★ 4.6", info: "A refreshing take on happiness and purpose.", link: "https://www.amazon.in/s?k=The+Subtle+Art+of+Not+Giving+a+F*ck+Mark+Manson" },
+        { title: "Ikigai by Hector Garcia and Francesc Miralles", rating: "★ 4.5", info: "Discover the Japanese secret to a long and meaningful life.", link: "https://www.amazon.in/s?k=Ikigai+Hector+Garcia" },
+        { title: "The Magic of Thinking Big by David J. Schwartz", rating: "★ 4.4", info: "Achieve success through powerful belief and vision.", link: "https://www.amazon.in/s?k=The+Magic+of+Thinking+Big+David+Schwartz" },
+        { title: "Mindset by Carol S. Dweck", rating: "★ 4.7", info: "The new psychology of success – fixed vs. growth mindset.", link: "https://www.amazon.in/s?k=Mindset+Carol+Dweck" },
+        { title: "Make Your Bed by Admiral William H. McRaven", rating: "★ 4.5", info: "Small habits that can change your life and the world.", link: "https://www.amazon.in/s?k=Make+Your+Bed+William+McRaven" },
+        { title: "Deep Work by Cal Newport", rating: "★ 4.6", info: "Rules for focused success in a distracted world.", link: "https://www.amazon.in/s?k=Deep+Work+Cal+Newport" },
+        { title: "Daring Greatly by Brené Brown", rating: "★ 4.6", info: "The power of vulnerability in a competitive world.", link: "https://www.amazon.in/s?k=Daring+Greatly+Brene+Brown" },
+        { title: "The Four Agreements by Don Miguel Ruiz", rating: "★ 4.5", info: "Ancient wisdom for modern happiness and freedom.", link: "https://www.amazon.in/s?k=The+Four+Agreements+Don+Miguel+Ruiz" },
+        { title: "Who Moved My Cheese? by Spencer Johnson", rating: "★ 4.3", info: "An allegorical guide to embracing change.", link: "https://www.amazon.in/s?k=Who+Moved+My+Cheese+Spencer+Johnson" },
+        { title: "The Alchemist by Paulo Coelho", rating: "★ 4.7", info: "A metaphorical self-help fable about dreams and destiny.", link: "https://www.amazon.in/s?k=The+Alchemist+Paulo+Coelho" },
+        { title: "The Monk Who Sold His Ferrari by Robin Sharma", rating: "★ 4.5", info: "A fable about success, happiness, and self-discovery.", link: "https://www.amazon.in/s?k=The+Monk+Who+Sold+His+Ferrari+Robin+Sharma" },
+        { title: "Feel the Fear and Do It Anyway by Susan Jeffers", rating: "★ 4.4", info: "Learn to face fears and move forward with confidence.", link: "https://www.amazon.in/s?k=Feel+the+Fear+and+Do+It+Anyway+Susan+Jeffers" }
+      ];
+
+      const container = document.getElementById('book-list');
+      selfHelpBooks.forEach(({ title, rating, info, link }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+            <a href="${link}" target="_blank" style="color: orange; font-weight: bold; text-decoration: underline;">Buy Now</a>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

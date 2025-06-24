@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Fiction Books – ReadNext</title>
+  <link rel="stylesheet" href="fiction.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Fiction Books</h1>
+    <h2 class="sky">Get lost in stories that spark imagination and emotion!</h2>
+  </header>
+
+  <div class="sky-line">
+    Select your favorite fiction books to add them to your reading gallery!
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const topFictionBooks = [
+        { title: "To Kill a Mockingbird by Harper Lee", rating: "★ 4.9", info: "A timeless novel about justice and innocence.", link: "https://www.amazon.in/dp/0099549484" },
+        { title: "1984 by George Orwell", rating: "★ 4.8", info: "Dystopian classic about surveillance and freedom.", link: "https://www.amazon.in/dp/0141036141" },
+        { title: "The Great Gatsby by F. Scott Fitzgerald", rating: "★ 4.7", info: "A tragic love story in the Roaring Twenties.", link: "https://www.amazon.in/dp/185326041X" },
+        { title: "The Catcher in the Rye by J.D. Salinger", rating: "★ 4.5", info: "A teenage boy’s perspective on society.", link: "https://www.amazon.in/dp/0316769487" },
+        { title: "Pride and Prejudice by Jane Austen", rating: "★ 4.8", info: "Classic romantic tale of Elizabeth and Darcy.", link: "https://www.amazon.in/dp/0141199079" },
+        { title: "The Kite Runner by Khaled Hosseini", rating: "★ 4.9", info: "A moving tale of friendship and redemption.", link: "https://www.amazon.in/dp/1408850257" },
+        { title: "Life of Pi by Yann Martel", rating: "★ 4.7", info: "A boy’s incredible journey with a tiger.", link: "https://www.amazon.in/dp/1786891682" },
+        { title: "The Alchemist by Paulo Coelho", rating: "★ 4.6", info: "A mystical story of following your dreams.", link: "https://www.amazon.in/dp/8172234988" },
+        { title: "The Book Thief by Markus Zusak", rating: "★ 4.7", info: "A story of hope in Nazi Germany, narrated by Death.", link: "https://www.amazon.in/dp/0552779733" },
+        { title: "Norwegian Wood by Haruki Murakami", rating: "★ 4.6", info: "A nostalgic and emotional love story.", link: "https://www.amazon.in/dp/0099554541" },
+        { title: "The Fault in Our Stars by John Green", rating: "★ 4.8", info: "A young adult love story about illness and life.", link: "https://www.amazon.in/dp/0141345659" },
+        { title: "The Da Vinci Code by Dan Brown", rating: "★ 4.6", info: "A fast-paced mystery-thriller full of secrets.", link: "https://www.amazon.in/dp/0552161276" },
+        { title: "A Thousand Splendid Suns by Khaled Hosseini", rating: "★ 4.9", info: "A powerful tale of two Afghan women.", link: "https://www.amazon.in/dp/074758589X" },
+        { title: "The Silent Patient by Alex Michaelides", rating: "★ 4.6", info: "A gripping psychological thriller.", link: "https://www.amazon.in/dp/1409181634" },
+        { title: "Where the Crawdads Sing by Delia Owens", rating: "★ 4.7", info: "A murder mystery blended with nature writing.", link: "https://www.amazon.in/dp/1472154665" },
+        { title: "The Midnight Library by Matt Haig", rating: "★ 4.5", info: "Explore a life of endless possibilities.", link: "https://www.amazon.in/dp/1786892735" },
+        { title: "Verity by Colleen Hoover", rating: "★ 4.6", info: "Romantic thriller full of twists.", link: "https://www.amazon.in/dp/1408726602" },
+        { title: "Before We Were Strangers by Renée Carlino", rating: "★ 4.4", info: "An emotional second-chance romance.", link: "https://www.amazon.in/dp/1501105778" },
+        { title: "It Ends With Us by Colleen Hoover", rating: "★ 4.7", info: "Bold story about love and strength.", link: "https://www.amazon.in/dp/1501110365" },
+        { title: "Little Women by Louisa May Alcott", rating: "★ 4.8", info: "Heartwarming tale of sisterhood and growth.", link: "https://www.amazon.in/dp/0147514010" }
+      ];
+
+      const container = document.getElementById('book-list');
+      topFictionBooks.forEach(({ title, rating, info, link }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+            <a href="${link}" target="_blank" style="color: orange; font-weight: bold; text-decoration: underline;">Buy Now</a>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>

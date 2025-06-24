@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 20 Thriller Books – ReadNext</title>
+  <link rel="stylesheet" href="thriller.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 class="orange">Top 20 Thriller Books</h1>
+    <h2 class="sky">Dive into gripping plots and heart-racing suspense!</h2>
+  </header>
+
+  <div class="sky-line">
+    Explore these thrilling novels that will keep you on the edge of your seat.
+  </div>
+
+  <section id="book-list" class="grid">
+    <script>
+      const thrillerBooks = [
+        { title: "The Girl with the Dragon Tattoo by Stieg Larsson", rating: "★ 4.8", info: "A gripping mystery surrounding a family’s dark secrets.", link: "https://www.amazon.in/s?k=The+Girl+with+the+Dragon+Tattoo+Stieg+Larsson" },
+        { title: "Gone Girl by Gillian Flynn", rating: "★ 4.7", info: "A twisted tale of marriage and deception.", link: "https://www.amazon.in/s?k=Gone+Girl+Gillian+Flynn" },
+        { title: "The Da Vinci Code by Dan Brown", rating: "★ 4.6", info: "A symbologist unravels a centuries-old secret.", link: "https://www.amazon.in/s?k=The+Da+Vinci+Code+Dan+Brown" },
+        { title: "The Silent Patient by Alex Michaelides", rating: "★ 4.7", info: "A woman’s silence holds the key to a shocking truth.", link: "https://www.amazon.in/s?k=The+Silent+Patient+Alex+Michaelides" },
+        { title: "Before I Go to Sleep by S.J. Watson", rating: "★ 4.5", info: "A psychological thriller about memory loss and betrayal.", link: "https://www.amazon.in/s?k=Before+I+Go+to+Sleep+S.J.+Watson" },
+        { title: "The Reversal by Michael Connelly", rating: "★ 4.6", info: "A legal thriller with twists and courtroom drama.", link: "https://www.amazon.in/s?k=The+Reversal+Michael+Connelly" },
+        { title: "Shutter Island by Dennis Lehane", rating: "★ 4.6", info: "A U.S. Marshal investigates a psychiatric facility.", link: "https://www.amazon.in/s?k=Shutter+Island+Dennis+Lehane" },
+        { title: "Behind Closed Doors by B.A. Paris", rating: "★ 4.5", info: "A seemingly perfect marriage hides dark secrets.", link: "https://www.amazon.in/s?k=Behind+Closed+Doors+B.A.+Paris" },
+        { title: "I Am Watching You by Teresa Driscoll", rating: "★ 4.4", info: "A stranger disappears, leaving behind questions and fear.", link: "https://www.amazon.in/s?k=I+Am+Watching+You+Teresa+Driscoll" },
+        { title: "The Couple Next Door by Shari Lapena", rating: "★ 4.5", info: "A couple’s baby disappears during a dinner party.", link: "https://www.amazon.in/s?k=The+Couple+Next+Door+Shari+Lapena" },
+        { title: "Into the Water by Paula Hawkins", rating: "★ 4.3", info: "A river with a deadly history draws people together.", link: "https://www.amazon.in/s?k=Into+the+Water+Paula+Hawkins" },
+        { title: "An Anonymous Girl by Greer Hendricks & Sarah Pekkanen", rating: "★ 4.4", info: "A psychological experiment blurs the lines of control.", link: "https://www.amazon.in/s?k=An+Anonymous+Girl+Greer+Hendricks" },
+        { title: "The Woman in the Window by A.J. Finn", rating: "★ 4.4", info: "A recluse sees something she shouldn't from her window.", link: "https://www.amazon.in/s?k=The+Woman+in+the+Window+A.J.+Finn" },
+        { title: "No Exit by Taylor Adams", rating: "★ 4.5", info: "Trapped in a snowstorm with a kidnapper among them.", link: "https://www.amazon.in/s?k=No+Exit+Taylor+Adams" },
+        { title: "The Girl on the Train by Paula Hawkins", rating: "★ 4.4", info: "A woman becomes entangled in a missing person case.", link: "https://www.amazon.in/s?k=The+Girl+on+the+Train+Paula+Hawkins" },
+        { title: "Lock Every Door by Riley Sager", rating: "★ 4.3", info: "A luxury apartment with chilling secrets.", link: "https://www.amazon.in/s?k=Lock+Every+Door+Riley+Sager" },
+        { title: "Final Girls by Riley Sager", rating: "★ 4.4", info: "Survivors of horrors reunite—and someone’s after them.", link: "https://www.amazon.in/s?k=Final+Girls+Riley+Sager" },
+        { title: "The Chain by Adrian McKinty", rating: "★ 4.3", info: "Your child is kidnapped. To free them, you must kidnap another.", link: "https://www.amazon.in/s?k=The+Chain+Adrian+McKinty" },
+        { title: "Then She Was Gone by Lisa Jewell", rating: "★ 4.3", info: "A mother’s search for her missing daughter unearths truth.", link: "https://www.amazon.in/s?k=Then+She+Was+Gone+Lisa+Jewell" },
+        { title: "The Woman in Cabin 10 by Ruth Ware", rating: "★ 4.2", info: "A journalist witnesses a murder on a cruise—but no one believes her.", link: "https://www.amazon.in/s?k=The+Woman+in+Cabin+10+Ruth+Ware" }
+      ];
+
+      const container = document.getElementById('book-list');
+      thrillerBooks.forEach(({ title, rating, info, link }, index) => {
+        const div = document.createElement('div');
+        div.className = 'book';
+        div.innerHTML = `
+          <input type="checkbox" id="book${index}" />
+          <label for="book${index}">
+            <h3>${title}</h3>
+            <p class="rating">${rating}</p>
+            <p>${info}</p>
+            <a href="${link}" target="_blank" style="color: orange; font-weight: bold; text-decoration: underline;">Buy Now</a>
+          </label>
+        `;
+        container.appendChild(div);
+      });
+    </script>
+  </section>
+
+  <div style="text-align: center; margin: 2rem;">
+    <button onclick="alert('Books added to gallery!')" style="padding: 10px 20px; font-size: 1rem; background: orange; color: white; border: none; border-radius: 10px; cursor: pointer;">
+      ➕ Add Selected to Gallery
+    </button>
+  </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
+
+</body>
+</html>
